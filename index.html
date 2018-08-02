@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thinkful Tube</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css-grids.css">
+    <link rel="stylesheet" href="float-grid.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="header">
+            <header role="banner">
+                <h1>Thinkful Tube</h1>
+            </header>
+        </div>
+        <div class="main">
+            <main role="main">
+                <div class="col-12 search-container">
+                    <form class="js-search-form">
+                        <label class="label-input" for="search"><span>Search Videos</span>
+                            <input class="js-input-query" type="text" name="search" placeholder="Search here...">
+                            <button class="search-button">Search</button>
+                        </label>
+                    </form>
+                </div>
+                <div class="row js-search-result"></div>
+            </main>
+         </div>
+    </div>
+    
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
