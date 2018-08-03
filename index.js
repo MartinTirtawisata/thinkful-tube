@@ -5,21 +5,31 @@ function getDataFromApi(searchTerm, callback) {
         part: 'snippet',
         key: "AIzaSyB3fvu0pgj_WfrWozSqoP53d4qiU4jwi4A",
         q: `${searchTerm} in:name`,
+        maxResults: 20
     }
+    console.log(YOUTUBE_SEARCH_URL);
     $.getJSON(YOUTUBE_SEARCH_URL,query,callback);
 }
 
 function renderResult(item){
-    return `<div class="col-3">
-    <a href="https://www.youtube.com/watch?v=${item.id.videoId}" target="_blank"><img src="${item.snippet.thumbnails.default.url}"></a>
+    return `<a href="https://www.youtube.com/watch?v=${item.id.videoId}" target="_blank"><div class="col-3">
+    <img src="${item.snippet.thumbnails.default.url}">
     <p> ${item.snippet.title}</p>
+    </div></a>`;
+}
+
+function renderTotalResult(t){
+    return `<div class="col-3">
+    <p>Total result for this search: ${t.pageInfo.totalResults} hello </p>
     </div>`;
 }
 
 function searchResult(data){
     console.log(data)
     const results = data.items.map((item,index) => renderResult(item));
+    $('.js-search-result').prop('hidden',false);
     $('.js-search-result').html(results);
+    $('.js-page-info').html(renderTotalResult(data));
 }
 
 function searchSubmit(){

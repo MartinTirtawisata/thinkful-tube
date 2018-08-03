@@ -26,7 +26,7 @@
 @media only screen and (min-width:640px){
     .col-3{
         width:25%;
-        border: 2px black solid;
+        /* border: 2px black solid; */
     }
 
     .col-12{
